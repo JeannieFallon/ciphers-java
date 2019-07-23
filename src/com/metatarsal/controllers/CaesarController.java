@@ -1,8 +1,11 @@
 package com.metatarsal.controllers;
 
+import com.metatarsal.models.CaesarText;
+
 public class CaesarController {
 
-    public String caesarCipher() {
-        return "This is Caesar cipher text.";
+    public CaesarText caesarCipher(CaesarText text) {
+        text.setCipherText("This is Caesar cipher text.");
+        return text;
     }
 }
