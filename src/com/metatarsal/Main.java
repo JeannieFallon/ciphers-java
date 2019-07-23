@@ -1,8 +1,11 @@
 package com.metatarsal;
 
+import com.metatarsal.controllers.BaseController;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello, Clarice.");
+        BaseController baseController = new BaseController();
+        baseController.index();
     }
 }
