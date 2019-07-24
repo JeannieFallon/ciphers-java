@@ -3,6 +3,7 @@ package com.metatarsal.ciphers.controllers;
 import com.metatarsal.ciphers.models.CaesarText;
 import com.metatarsal.ciphers.models.Rot13Text;
 import com.metatarsal.ciphers.models.VigenereText;
+import com.metatarsal.ciphers.services.CipherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -10,11 +11,15 @@ import org.springframework.stereotype.Controller;
 public class BaseController {
 
     @Autowired
-    private Rot13Controller rot13Controller;
+    Rot13Controller rot13Controller;
     @Autowired
-    private CaesarController caesarController;
+    CaesarController caesarController;
     @Autowired
-    private VigenereController vigenereController;
+    VigenereController vigenereController;
+    @Autowired
+    CipherService cipherService;
+    @Autowired
+    StringBuilder sb;
 
     public void index() {
 
