@@ -18,8 +18,6 @@ public class BaseController {
     VigenereController vigenereController;
     @Autowired
     CipherService cipherService;
-    @Autowired
-    StringBuilder sb;
 
     public void index() {
 
@@ -35,5 +33,9 @@ public class BaseController {
         System.out.println(rText.getCipherText());
         System.out.println(cText.getCipherText());
         System.out.println(vText.getCipherText());
+    }
+
+    public StringBuilder getStringBuilder() {
+        return new StringBuilder();
     }
 }

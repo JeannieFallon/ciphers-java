@@ -4,7 +4,7 @@ import com.metatarsal.ciphers.models.CaesarText;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class CaesarController {
+public class CaesarController extends BaseController {
 
     public CaesarText caesarCipher(CaesarText text) {
         text.setCipherText("C cipher");

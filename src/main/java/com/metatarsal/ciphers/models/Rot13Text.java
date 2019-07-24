@@ -13,4 +13,8 @@ public class Rot13Text extends Text {
         super();
         this.plainText = plainText;
     }
+
+    public int getKEY() {
+        return KEY;
+    }
 }
