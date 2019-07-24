@@ -1,4 +1,4 @@
-package com.metatarsal.ciphersjava;
+package com.metatarsal.ciphers;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,4 +1,4 @@
-package com.metatarsal.ciphersjava;
+package com.metatarsal.ciphers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
