@@ -14,4 +14,8 @@ public class VigenereText extends Text {
         this.plainText = plainText;
         this.keyword = keyword;
     }
+
+    public String getKeyword() {
+        return keyword;
+    }
 }

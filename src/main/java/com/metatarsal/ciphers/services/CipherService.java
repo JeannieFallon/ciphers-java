@@ -3,6 +3,8 @@ package com.metatarsal.ciphers.services;
 import com.metatarsal.ciphers.util.CipherConstants;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+
 @Component
 public class CipherService {
 
@@ -32,5 +34,20 @@ public class CipherService {
 
     public int getRotation(int alphaIdx, int shiftVal) {
         return  (alphaIdx + shiftVal) % CipherConstants.ENG_ALPHA_LEN;
+    }
+
+    public ArrayList<Integer> getShiftVals(String keyword) {
+
+        ArrayList<Integer> shiftVals = new ArrayList<>();
+        int asciiVal;
+
+        keyword = keyword.toLowerCase();
+
+        for (int i = 0, n = keyword.length(); i < n; i++) {
+            asciiVal = (int)keyword.charAt(i);
+            shiftVals.add((char)asciiVal - CipherConstants.ENG_LOWER_FLOOR + 1);
+        }
+
+        return shiftVals;
     }
 }
