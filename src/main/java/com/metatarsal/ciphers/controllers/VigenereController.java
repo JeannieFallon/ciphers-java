@@ -21,7 +21,7 @@ public class VigenereController extends BaseController {
                 if (i >= text.getPlainText().length()) {
                     break;
                 } else {
-                    sb.append(cipherService.GetCipherLetter(text.getPlainText().charAt(i),
+                    sb.append(cipherService.getCipherLetter(text.getPlainText().charAt(i),
                                                             shiftVals.get(j)));
                 }
 

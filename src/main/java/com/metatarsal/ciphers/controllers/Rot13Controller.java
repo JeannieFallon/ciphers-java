@@ -11,7 +11,7 @@ public class Rot13Controller extends BaseController {
         StringBuilder sb = getStringBuilder();
 
         for(int i = 0, n = text.getPlainText().length(); i < n; i++) {
-            sb.append(cipherService.GetCipherLetter(text.getPlainText().charAt(i),
+            sb.append(cipherService.getCipherLetter(text.getPlainText().charAt(i),
                                                     text.getKEY()));
         }
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 @Component
 public class CipherService {
 
-    public char GetCipherLetter(char letter, int shiftVal) {
+    public char getCipherLetter(char letter, int shiftVal) {
 
         int asciiVal = (int)letter;
 
