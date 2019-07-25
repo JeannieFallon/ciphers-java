@@ -7,7 +7,16 @@ import org.springframework.stereotype.Controller;
 public class CaesarController extends BaseController {
 
     public CaesarText caesarCipher(CaesarText text) {
-        text.setCipherText("C cipher");
+
+        StringBuilder sb = getStringBuilder();
+
+        for (int i = 0, n = text.getPlainText().length(); i < n; i++) {
+            sb.append(cipherService.GetCipherLetter(text.getPlainText().charAt(i),
+                                                    text.getKey()));
+        }
+
+        text.setCipherText(sb.toString());
+
         return text;
     }
 }

@@ -14,4 +14,8 @@ public class CaesarText extends Text {
         this.plainText = plainText;
         this.key = key;
     }
+
+    public int getKey() {
+        return key;
+    }
 }
