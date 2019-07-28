@@ -26,15 +26,35 @@ public class BaseController {
         Scanner scanner = new Scanner(System.in);
         String plainText, keyword;
         int key;
+        boolean isValid;
 
         System.out.println("Enter plaintext:");
-        plainText = scanner.next();
+        plainText = scanner.nextLine();
 
-        System.out.println("Enter a positive integer as the key for the Caesar cipher:");
-        key = scanner.nextInt();
+        isValid = false;
+        key = 0;
+        while (!isValid) {
+            System.out.println("Enter a positive integer as the key for the Caesar cipher:");
+            var input = scanner.nextLine();
+            try {
+                key = Integer.parseInt(input);
+                isValid = key > 0;
+            } catch (Exception e) {
+                System.out.println("Invalid input. Positive integers only.");
+            }
+        }
 
-        System.out.println("Enter a key word for the Vigenere cipher:");
-        keyword = scanner.next();
+        isValid = false;
+        keyword = "";
+        while (!isValid) {
+            System.out.println("Enter a key word for the Vigenere cipher:");
+            keyword = scanner.nextLine();
+            if (keyword.matches("(?<=\\s|^)[a-zA-Z]*(?=[.,;:]?\\s|$)")) {
+                isValid = true;
+            } else {
+                System.out.println("Invalid input. Alphabetic characters only.");
+            }
+        }
 
         Rot13Text rText = rot13Controller.rot13Cipher(new Rot13Text(plainText));
         CaesarText cText = caesarController.caesarCipher(new CaesarText(plainText, key));
